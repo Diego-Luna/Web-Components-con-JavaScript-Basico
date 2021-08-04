@@ -115,3 +115,27 @@ Los web components si
 Los componentes pueden vivir en cualquier framework o librería
 
 Puede llegar a ser bastante personalizable
+
+## ♻️ Ciclo de vida de un componente
+
+Son parte del critical Render Path
+Las clases cuando generamos un constructor generamos están guardando en memoria que es lo que tiene el constructor
+* Todos los componentes deben tener un constructor
+* Una mala práctica es pintar el template directamente el template en el constructor
+  * En el constructor solo se debe asegurar todo lo que está en memoria exista para pintar el componente
+
+
+1. connectedCallback
+  * Es cuando ya es un nodo del DOM
+  * Aqui es donde se pueden renderizar el HTML y CSS
+
+2. disconnectedCallback
+  * Es cuando quitamos del DOM (desconectar) el componente
+  * Cuando queramos liberar memoria los cuales está consumiendo nuestro componente
+
+3. attibuteChangedCallback
+  * Cuando exista un cambio de los atributos del componente este método nos avisara que cambiaron
+
+4. adoptedCallback
+  * Cuando un componente va a ser adoptado en otra cosa como ser un iframe
+  * No es muy usado
