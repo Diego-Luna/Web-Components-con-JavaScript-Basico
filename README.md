@@ -87,4 +87,31 @@ RESUMEN: Los web components son fragmentos de código frontend los cuales se pue
 
 RESUMEN: Para crear web components se necesitan cuatro tecnologías, Custom Elements para crear etiquetas de HTML, Shadow DOM para no tener conflictos con el código externo y pueda vivir nuestro código en diferentes lugares y finalmente ES Modules para poder reutilizar el código
 
+## ✅ Beneficios de Web Components
 
+* Reutilización
+
+Don’t repeat yourself
+Web Components ⇒ Construyes una sola vez y lo utilizas para siempre
+
+* Legibilidad
+
+Reduce el código a cosas más simples y directas
+
+* Mantenibilidad
+
+Cada uno de los componentes pueden ser escritos y probados de forma individual
+
+Si un componente se rompe entonces no afectara al resto de la aplicación
+
+* Interoperabilidad
+
+Los frameworks y librerías no están hechos para coexistir entre ellos
+
+Los web components si
+
+* Consistencia
+
+Los componentes pueden vivir en cualquier framework o librería
+
+Puede llegar a ser bastante personalizable
