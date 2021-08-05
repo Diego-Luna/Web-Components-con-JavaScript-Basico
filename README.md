@@ -204,3 +204,45 @@ getTemplate(){ //*Esto será puro HTML
     return template;
   }
 ```
+
+## Atributos
+
+Crearemos nuestros propios atributos en JS para colocarlos en la etiqueta HTML. Así mandamos información de manera sencilla.
+
+HTML:
+```html
+<my-element 
+  title="Soy un título :D" 
+  parrafo="Soy el texto del párrafo" 
+  img="https://avatars3.githubusercontent.com/u/1905708?s=280&v=4">
+</my-element>
+```
+
+JavaScript:
+
+```javascript
+class myElement extends HTMLElement {
+  constructor(){
+    super(); //* Obtenemos acceso a todos los elementos y métodos de la clase que extendemos (heredamos)
+    this.attachShadow({mode: 'open'}); //*Casi siempre todos los componentes tiene que venir en modo abierto.
+
+    this.title = this.getAttribute('title'); //*Estos son los atributos que incluiremos en la etiqueta HTML
+    this.parrafo = this.getAttribute('parrafo');
+    this.img = this.getAttribute('img');
+  }
+
+  getTemplate(){ //*Esto será puro HTML
+    const template = document.createElement('template');
+    template.innerHTML = `
+      <section>
+        <h2>${this.title}</h2>
+        <div>
+          <p>${this.parrafo}</p>
+          <img src="${this.img}}"/>
+        </div>
+      </section>
+      ${this.getStyles()} <!---Aplicamos los estilos--->
+    `;
+    return template;
+  }
+```
