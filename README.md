@@ -172,3 +172,35 @@ JS:
     </h2>
   </section>
 ```
+
+## Multi Content Slot
+Si queremos agregar más información necesitamos hacer modificaciones en las diferentes etiquetas que usaremos de slot. Le agregamos el atributo <slot name="algo"></slot>. En la etiqueta HTML haremos <span slot="algo"></span> . Así vinculamos ambas etiquetas.
+
+HTML:
+```html
+<my-element>
+  <span slot="title">Soy el h2 que está en el slot de JS</span>
+  <span slot="paragraph">Soy el p que está en el slot de JS</span>
+</my-element>
+```
+
+JS:
+```JavaScript
+getTemplate(){ //*Esto será puro HTML
+    const template = document.createElement('template');
+    template.innerHTML = `
+      <section>
+        <h2>
+          <slot name="title"></slot> <!---En el slot tendremos el texto que tenemos en la etiqueta de my element--->
+        </h2>
+        <div>
+          <p>
+            <slot name="paragraph"></slot>
+          </p>
+        </div>
+      </section>
+      ${this.getStyles()} <!---Aplicamos los estilos--->
+    `;
+    return template;
+  }
+```
