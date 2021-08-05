@@ -253,3 +253,29 @@ disconnected callback nos servirá para deslindar de eventos a nuestros componen
 
 Mas info: https://developer.mozilla.org/es/docs/Web/Web_Components/Using_custom_elements#usando_callbacks_de_ciclo_de_vida 
 
+## :HOST
+
+Pseudoclase que utilizaremos para darle estilos a nuestro componente web (no se trata necesariamente de los estilos visuales).
+
+Se trata de los estilos que vienen definidos por default con una etiqueta, como pueden ser display, padding y margin.
+
+:host da estilos al componente
+
+La pseudoclase :host se utiliza dentro del método donde escribíamos nuestro css del componente getStyles(){}
+
+### :host {estilos para el componente}
+
+Teniendo varias instancias de un componente, si a una le agregamos una clase por ejemplo ‘blue’
+:host(.blue) {estilos para el componente con la clase blue}
+
+Va a buscar el elemento que tenga de atributo una clase con el valor blue y le va a agregar los estilos que definimos.
+
+También podemos darle estilos por atributo. Por ejemplo si a una instancia le agregamos el atributo ‘yellow’
+:host([yellow]) {estilos para el elemento que tenga el atributo yellow}
+
+También podemos agregar cierto contexto.
+Por ejemplo, si tenemos una instancia del componente dentro de un article con una clase ‘card’
+:host-context(article.card) {estilos}
+
+Hacer cambios al contenido del componente
+:host([yellow]) h1 {estilos}
