@@ -279,3 +279,43 @@ Por ejemplo, si tenemos una instancia del componente dentro de un article con un
 
 Hacer cambios al contenido del componente
 :host([yellow]) h1 {estilos}
+
+
+## ::SLOTTED
+
+Utilizaremos el pseudoelemento sloted que nos ayudara a agregarle estilos especificos a todo el contenido dinámico que venga fuera del componente y se vaya a agregar en todas las etiquetas slot que estan fuera de nuestro componente.
+
+Este elemento solo se va a poder trabajar una vez estemos utilizando el shadow dom
+
+Podremos usar la pseudo clase sloted con el selector * para seleccionar todas las etiquetas que estan por fuera.
+
+```css
+::slotted(*){
+
+        }
+        ::slotted(span){
+          font-size:30px;
+          color:red;
+
+        }
+```
+
+También podremos seleccionar exactamente a cual etiqueta esta por fuera agregarle estilos
+
+::sloted(etiquetaFuera){estilos}
+
+```css
+::slotted(span){
+          font-size:30px;
+          color:red;
+}
+```
+
+También podremos cambiar los estilos utilizando una clase que tenga la etiqueta
+
+```css
+::slotted(.text){
+
+          color:blue;
+        }
+```
