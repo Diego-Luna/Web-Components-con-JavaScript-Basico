@@ -150,3 +150,25 @@ Las clases cuando generamos un constructor generamos están guardando en memoria
 * element.appendChild: Inserta esa etiqueta que estaba en memoria al DOM real
 
 También recordemos que no es buna práctica usar innerHTML 👀
+
+## Content Slot: Manejo de datos
+
+Es una etiqueta de HTML 5 que nos va a ayudar a poder generar el placeholder en donde irá el texto o cierto contenido que necesitos para que, afuera de le etiqueta, nosotros podamos pasarle contenido que el componente pueda renderizar.
+
+Básicamente modificamos la etiqueta en HTML y JS hará el trabajo sucio por nosotros.
+
+HTML:
+```html
+  <my-element>
+    Soy texto dentro del slot
+  </my-element>
+```
+JS:
+
+```js
+  <section>
+    <h2>
+      <slot></slot> <!---En el slot tendremos el texto que tenemos en la etiqueta de my element--->
+    </h2>
+  </section>
+```
