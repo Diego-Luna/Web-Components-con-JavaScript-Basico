@@ -246,3 +246,10 @@ class myElement extends HTMLElement {
     return template;
   }
 ```
+
+## DISCONNECTED CALLBACK
+
+disconnected callback nos servirá para deslindar de eventos a nuestros componente, dentro de esa función podremos retirarlos para liberar espacio en memoria.
+
+Mas info: https://developer.mozilla.org/es/docs/Web/Web_Components/Using_custom_elements#usando_callbacks_de_ciclo_de_vida 
+
