@@ -1,5 +1,7 @@
 # Web-Components-con-JavaScript-Basico
 
+Web Components de terceros: https://www.webcomponents.org/ 
+
 ## 🙅‍♂️ ¿Qué problemas resuelven los Web Components?
 
 Web components son encapsulados de código, que coexisten entre si.
